@@ -3,6 +3,8 @@ const bodyParser = require("body-parser");
 const cors = require("cors");
 require("dotenv").config();
 
+const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY);
+
 const PORT = 8080;
 const app = express();
 app.use(cors());
@@ -45,4 +47,3 @@ app.post("/payment-sheet", async (req, res) => {
 app.listen(PORT, () => {
   console.log("server is running at port", PORT);
 });
-
