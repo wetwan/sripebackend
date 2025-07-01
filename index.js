@@ -34,6 +34,7 @@ app.post("/payment-sheet", async (req, res) => {
     });
 
     res.status(200).json({
+      paymentIntentId: paymentIntent.id,
       paymentIntent: paymentIntent.client_secret,
       ephemeralKey: ephemeralKey.secret,
       customer: customer.id,
