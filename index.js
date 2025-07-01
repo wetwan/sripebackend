@@ -22,7 +22,8 @@ app.post("/payment-sheet", async (req, res) => {
 
     const ephemeralKey = await stripe.ephemeralKeys.create(
       { customer: customer.id },
-      { apiVersion: "2024-05-28" }
+
+      { apiVersion: "2025-05-28.basil" }
     );
 
     const paymentIntent = await stripe.paymentIntents.create({
